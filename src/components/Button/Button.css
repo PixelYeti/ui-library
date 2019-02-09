@@ -1,0 +1,25 @@
+.button {
+	box-sizing: border-box;
+	padding: 10px;
+	min-width: 100px;
+
+	border-radius: 5px;
+	border: none;
+
+	text-align: center;
+
+	font-family: sans-serif;
+
+	color: white;
+
+	cursor: pointer;
+}
+
+.button:hover {
+	filter: contrast(85%);
+}
+
+.button:focus {
+	outline: none;
+	border: none;
+}
