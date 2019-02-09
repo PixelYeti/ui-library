@@ -4,14 +4,18 @@
   "description": "UI library for use within CSAD applications",
   "main": "dist/csad-ui.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:update": "jest --updateSnapshot",
     "storybook": "start-storybook -p 9001",
     "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "lint": "eslint src/**/*.js src/**/*.jsx --fix"
   },
   "author": "Callum J. McKenzie",
   "license": "ISC",
   "dependencies": {
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/react": "^4.1.11",
     "classnames": "^2.2.6",
     "prop-types": "^15.6.2",
     "react": "^16.8.1",
@@ -22,19 +26,32 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-actions": "^4.1.11",
-    "@storybook/react": "^4.1.11",
+    "babel-jest": "^24.1.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "docz": "^0.13.7",
     "docz-theme-default": "^0.13.7",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.1.0",
     "node-sass": "^4.11.0",
     "prettier": "^1.16.4",
+    "react-test-renderer": "^16.8.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }

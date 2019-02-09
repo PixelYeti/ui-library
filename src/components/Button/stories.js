@@ -6,6 +6,6 @@ import { action } from '@storybook/addon-actions';
 import Button from './Button';
 
 storiesOf('Button')
-	.add('with text', () => (
-		<Button onClick={action('clicked')} colour={"#42ce4f"}>Hello</Button>
-	));
+  .add('with text', () => (
+    <Button onClick={action('clicked')} colour="#42ce4f">Hello</Button>
+  ));

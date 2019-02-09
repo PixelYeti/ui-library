@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object created 1`] = `
+<button
+  className="button"
+  colour="#42ce4f"
+  onClick={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#42ce4f",
+    }
+  }
+  type="button"
+>
+  Hello
+</button>
+`;
