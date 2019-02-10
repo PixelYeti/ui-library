@@ -8,7 +8,7 @@ import TextField from './TextField';
 storiesOf('TextField')
   .add('with text', () => (
     <>
-        <TextField type="url" placeholder="Placeholder" label="test"/>
+        <TextField type="url" placeholder="Placeholder" label="test" validate={() => false}/>
         <TextField type="text" placeholder="Placeholder" label="test1" highlightColour="red"/>
     </>
   ));

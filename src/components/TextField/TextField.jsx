@@ -14,6 +14,22 @@ const Input = styled.input`
 class TextField extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            errorMsg: undefined
+        }
+
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange(e) {
+        if (this.props.validate) {
+            if (!this.props.validate(e.target.value)) {
+                this.setState({errorMsg: "Invalid format"});
+                return;
+            }
+            this.setState({errorMsg: undefined});
+        }
     }
 
     render() {
@@ -24,7 +40,8 @@ class TextField extends React.Component {
                     tabIndex={this.props.tabIndex || 0}
                     style={{['--highlight-color']: this.props.highlightColour || "#3f89ff"}}
                     type={this.props.type}
-                    placeholder={this.props.placeholder || undefined}/>
+                    placeholder={this.props.placeholder || undefined} onChange={this.onChange}/>
+                <span className={style.errorMsg} style={{color: this.props.errorColour || '#c20101'}}>{this.state.errorMsg}</span>
             </div>
         )
     }
@@ -38,7 +55,8 @@ TextField.propTypes = {
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     highlightColour: PropTypes.string,
-    tabIndex: PropTypes.number
+    tabIndex: PropTypes.number,
+    errorColour: PropTypes.string
 }
 
 export default TextField;

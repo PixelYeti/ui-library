@@ -18,6 +18,7 @@
 .input[type=search],
 .input[type=tel],
 .input[type=url] {
+    font-size: 16px;
     padding: 12px 15px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -32,4 +33,11 @@
 .input::placeholder,
 .input::-webkit-input-placeholder {
     color: rgb(199, 199, 199);
+}
+
+
+.errorMsg {
+    padding-left: 4px;
+    font-size: 16px;
+    font-family: sans-serif;
 }
