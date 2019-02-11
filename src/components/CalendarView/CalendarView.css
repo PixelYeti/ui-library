@@ -1,30 +1,12 @@
-.btn {
-	box-sizing: border-box;
-	padding: 10px;
-	min-width: 100px;
-
-	border-radius: 5px;
-	border: none;
-
-	text-align: center;
-
-	cursor: pointer;
-
-	font-family: sans-serif;
-
-	font-weight: bold;
-
-	user-select: none;
-}
-
-.btn:hover {
-	filter: contrast(85%);
+.inputContainer {
+	display: flex;
+	flex-direction: row;
 }
 
 .calContainer {
 	margin: 10px;
 	width: 250px;
-	height: 350px;
+	height: 225px;
 
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -45,6 +27,10 @@
 	font-family: sans-serif;
 	cursor: pointer;
 	font-weight: bold;
+	user-select: none;
+	line-height: 60px;
+	width: 20px;
+	text-align: center;
 }
 
 .monthDisplay {
@@ -55,4 +41,60 @@
 	align-items: center;
 
 	font-family: sans-serif;
+	user-select: none;
+}
+
+.calBody {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.dayDisplay {
+	font-family: sans-serif;
+	font-size: 12px;
+	color: #bbb;
+	padding-top: 10px;
+	width: 95%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.dayDisplay > * {
+	width: 14%;
+	text-align: center;
+	user-select: none;
+}
+
+.dates {
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+.dates > * {
+	width: 14%;
+	text-align: center;
+	padding: 3px 0;
+	font-size: 12px;
+	user-select: none;
+}
+
+.selectable {
+	cursor: pointer;
+}
+
+.selectable:hover {
+	background-color: #eee;
+	border-radius: 12px;
+}
+
+.selected {
+	background-color: #eee;
+	border-radius: 12px;
 }
