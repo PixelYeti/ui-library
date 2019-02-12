@@ -19,6 +19,7 @@ function TextArea(props) {
 											style={
 												{
 													fontFamily: props.fontFamily || 'monospace',
+													fontSize: props.fontSize || '12px',
 													['--highlight-color']: props.highlightColour || '#3f89ff',
 												}
 											}
@@ -41,6 +42,7 @@ TextArea.propTypes = {
 	fontFamily: PropTypes.string,
 	highlightColour: PropTypes.string,
 	validate: PropTypes.func,
+	fontSize: PropTypes.string
 };
 
 export default TextArea;

@@ -52,6 +52,7 @@ class CalendarView extends React.Component {
 			shown: false,
 			selectedMonth: new Date(),
 			selectedDate: new Date(),
+			dark: props.dark || false,
 		};
 
 		this.handleClick = this.handleClick.bind(this);
@@ -170,6 +171,7 @@ CalendarView.propTypes = {
 	calendarTextColour: PropTypes.string,
 	highlightColour: PropTypes.string,
 	onChange: PropTypes.func.isRequired,
+	dark: PropTypes.bool,
 };
 
 export default CalendarView;

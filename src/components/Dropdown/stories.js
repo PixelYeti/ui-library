@@ -8,7 +8,7 @@ import DropdownItem from './DropdownItem';
 
 storiesOf('Dropdown')
   .add('with one item', () => (
-    <Dropdown placeholder="test" onChange={action('changed')}>
+    <Dropdown placeholder="test" onChange={action('changed')} dark>
       <DropdownItem name="Test" value={0} />
       <DropdownItem name="Hello" value={0} />
     </Dropdown>

@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import style from './TextField.css';
 
 const StyledInput = styled.input`
-		font-size: 16px;
     padding: 12px 15px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -47,13 +46,19 @@ class TextField extends React.Component {
 	render() {
 		return (
 			<div className={style.container} style={{ width: this.props.width || '150px' }}>
-				<label style={{ color: this.props.labelColour || 'black' }}>
+				<span style={
+					{
+						color: this.props.labelColour || 'black',
+						fontSize: this.props.fontSize || '12px',
+					}
+				}>
 					{this.props.label || undefined}
-				</label>
+				</span>
 				<StyledInput
 					tabIndex={this.props.tabIndex || 0}
 					style={
 						{
+							fontSize: this.props.fontSize || '12px',
 							['--highlight-color']: this.props.highlightColour || '#3f89ff',
 						}
 					}
@@ -61,6 +66,10 @@ class TextField extends React.Component {
 					placeholder={this.props.placeholder || undefined}
 					onChange={this.onChange}
 				/>
+				<span className={style.errorMsg}
+							style={{ fontSize: this.props.fontSize || '12px' }}>
+					{this.state.errorMessage}
+				</span>
 			</div>
 		);
 	}
@@ -76,6 +85,7 @@ TextField.propTypes = {
 	highlightColour: PropTypes.string,
 	tabIndex: PropTypes.number,
 	errorColour: PropTypes.string,
+	fontSize: PropTypes.string,
 };
 
 export default TextField;
